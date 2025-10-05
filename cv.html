@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB-Resumé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Monsieur+La+Doulaise&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles_resume.css">
+</head>
+<body>
+    <div class="bg">
+
+    </div>
+    <nav>
+        <div>
+            <a href="index.html"><img src="img/logopink.png" alt=""></a>
+        </div>
+        <ul>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black group-hover:text-purple-500 transition dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.75L12 3l9 6.75M4.5 10.5v10.125A1.125 1.125 0 005.625 21.75h12.75A1.125 1.125 0 0019.5 20.625V10.5" />
+                </svg>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black group-hover:text-purple-500 transition dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+                <a href="cv.html">Resumé</a>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black group-hover:text-purple-500 transition dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+                </svg>
+                <a href="portfolio.html">Portfolio</a>
+            </li>
+        </ul>
+    </nav>
+    
+<section id="cv" class="cv-section">
+  <div class="cv-wrap">
+
+    <!-- CENTER PHOTO & NAME (middle cell) -->
+    <div class="cv-center">
+      <img src="img/knight.png" alt="Dominik Bagoňa">
+      <h2>Dominik Bagoňa</h2>
+      <p>Software Engineering Student</p>
+    </div>
+
+    <!-- ROW 1 -->
+    <article class="cv-card">
+      <h3 class="cv-title" tabindex="0">About</h3>
+      <div class="cv-body">
+        <p>I’m a motivated and tech-savvy student starting BSc in Software Engineering (VIA University College, Denmark). I focus on web development, UI design, and optimizing websites for performance and user experience. I enjoy solving real-world problems and learning new technologies.</p>
+      </div>
+    </article>
+
+    <article class="cv-card">
+      <h3 class="cv-title" tabindex="0">Experience</h3>
+      <div class="cv-body">
+        <p><b>DigitalDreamers, s.r.o.</b> — Part-time (Sep 2024 – Present)</p>
+        <p><b>Farmville, s.r.o.</b> — Web development & optimization (May – Oct 2024). Strengthened corporate identity, created marketing materials (Adobe), and improved the company’s online presence (content & social).</p>
+        <p><b>SPA project:</b> <i>System for controlling medicines and their availability in pharmacies</i> — advanced to regional round; presenting, analysis, solution design.</p>
+      </div>
+    </article>
+
+    <article class="cv-card" style="grid-column:3; grid-row:1;">
+      <h3 class="cv-title" tabindex="0">Skills</h3>
+      <div class="cv-body two-cols">
+        <ul>
+          <li>HTML + CSS</li><li>JavaScript</li><li>PHP</li><li>SQL</li>
+          <li>WordPress</li><li>Figma</li><li>Adobe Photoshop</li><li>Adobe Illustrator</li>
+          <li>Adobe InDesign</li><li>Adobe Premiere Pro</li><li>Canva</li>
+          <li>MS Word, Excel, PowerPoint, Access</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ROW 2 (center photo is here at col 2, row 2) -->
+    <article class="cv-card" style="grid-column:1; grid-row:2;">
+      <h3 class="cv-title" tabindex="0">Education</h3>
+      <div class="cv-body">
+        <p><b>VIA University College, Denmark</b> — BSc Software Engineering (incoming)</p>
+        <p><b>Súkromná SOŠ, Poprad</b> — Internet & Digital Technologies (2021–2025)</p>
+        <p><b>Spojená Škola, Poprad</b> — 2012–2021</p>
+      </div>
+    </article>
+
+    <article class="cv-card" style="grid-column:3; grid-row:2;">
+      <h3 class="cv-title" tabindex="0">Certificates</h3>
+      <div class="cv-body">
+        <ul>
+          <li>CISCO IT Essentials — 20.06.2022</li>
+          <li>CCNAv7: Introduction to Networks — 20.06.2023</li>
+          <li>CCNAv7: Switching, Routing & Wireless Essentials — 17.06.2024</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ROW 3 -->
+    <article class="cv-card" style="grid-column:1; grid-row:3;">
+      <h3 class="cv-title" tabindex="0">Languages</h3>
+      <div class="cv-body">
+        <p>English — Cambridge FCE (C1)</p>
+        <p>Slovak — Native speaker</p>
+      </div>
+    </article>
+
+    <article class="cv-card" style="grid-column:2; grid-row:3;">
+      <h3 class="cv-title" tabindex="0">Contact</h3>
+      <div class="cv-body">
+        <p><b>Email:</b> bagona.dominik@gmail.com</p>
+        <p><b>Phone:</b> +421 948 279 970</p>
+        <p><b>Address:</b> Sadová 37, 05801 Poprad</p>
+      </div>
+    </article>
+
+    <!-- If you want a 9th card, put it here -->
+    <!-- <article class="cv-card" style="grid-column:3; grid-row:3;">Other</article> -->
+  </div>
+</section>
+
+
+    <footer>
+        <p>
+            Dominik Bagona
+        </p>
+        <p>
+            &copy; All rights reserved
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,644 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: var(--default);
+    background-color: var(--licorice);
+
+
+    --hole-size: 40px;   /* size of each cut-out square */
+    --cell-size: 80px;   /* spacing (grid cell) for holes */
+    
+    
+    --default: 'Courier New', Courier, monospace;
+    --signature: "Monsieur La Doulaise", cursive;
+    --headings: "Orbitron", sans-serif;
+    --details: rgba(255,255,255,0.05);
+    --cronell-red: #A22118;
+    --penn-red: #751009;
+    --licorice: #110B11;
+    --black: #000000;
+}
+
+body {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        var(--details) 0px,
+        var(--details) 2px,
+        transparent 4px,
+        transparent 2.9em
+        
+    );
+}
+
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 5rem 0rem 5rem;   
+}
+
+nav div:nth-child(1) a {
+    color: var(--penn-red);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+nav div:nth-child(1) img {
+    max-width: 5em;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 0em 0.7em;
+}
+
+svg {
+    width: 16px;
+    padding-right: 0.3em;
+    color: var(--penn-red);
+}
+
+li:hover svg {
+    color: var(--cronell-red);
+}
+
+li a {
+    position: relative;
+    color: var(--penn-red);
+    text-decoration: none;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cronell-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+li:hover a::after {
+   transform: scaleX(1);
+}
+
+/* ---------- NAV RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem 0 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    ul {
+       justify-content: center;
+       align-items: center; 
+       padding-left: 0;
+    }
+}
+@media (max-width: 375px) {
+    ul {
+        justify-content: space-evenly;
+    }
+}
+
+/* ------------ SEC1 -------------- */
+.sec1 {
+    width: 100%;
+    max-height: 80vh;
+    aspect-ratio: 1920 / 1080;
+}
+
+.sec1 > div:nth-child(1) {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sec1 > div > div {
+    flex: 1 1 25%;
+    position: relative;
+    min-width: 0;
+}
+
+.sec1 > div > div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/rental.png");
+    background-repeat: no-repeat;
+
+    background-size: 400% 100%;
+    background-position: var(--bgx, 0%) 50%;
+
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.area1 { 
+    --bgx: 0%;
+}
+.area2 {
+    --bgx: 33.333%;
+}
+.area3 {
+    --bgx: 66.666%;
+}
+.area4 {
+    --bgx: 100%;
+}
+
+.area1 a {
+    width: 100%;
+    height: 100%;
+    color: transparent !important;
+    cursor: pointer;
+}
+.area2 a {
+    width: 100%;
+    height: 100%;
+    color: transparent !important;
+    cursor: pointer;
+}
+.area3 a {
+    width: 100%;
+    height: 100%;
+    color: transparent !important;
+    cursor: pointer;
+}
+.area4 a {
+    width: 100%;
+    height: 100%;
+    color: transparent !important;
+    cursor: pointer;
+}
+
+.sec1 > div > div:hover {
+    z-index: 2;
+}
+.sec1 > div > div:hover::before {
+    transform: scale(1.05);
+}
+.sec1 > div:hover > div:not(:hover)::before {
+    transform: scale(0.9);
+}
+
+.sec1 a {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(1.8rem, 1rem + 3vw, 3rem);
+    color: white;
+    font-family: var(--headings);
+    text-decoration: none;
+}
+
+.sec1 .seemore{
+    display: flex;
+    align-items: center;
+}
+
+.sec1 .seemore .arrow {
+    color: white;
+    width: 3em;
+    height: 3em;
+}
+
+.sec1 .seemore a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.sec1 .seemore a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ===== Responsiveness ===== */
+@media (max-width: 1024px) {
+  .sec1 { max-height: 70vh; }
+}
+@media (max-width: 765px) {
+  .sec1 { max-height: 60vh; }
+}
+@media (max-width: 375px) {
+  .sec1 { max-height: 50vh; }
+}
+
+/* ------------ DIVIDER -------------- */
+.line {
+    background-color: var(--penn-red);
+    min-height: 10px;
+}
+
+/* ------------ SEC2 -------------- */
+.sec2 {
+  position: relative;
+  width: 100%;
+  margin: 5rem 0 5rem 0;
+  z-index: 0; /* Make sure this is below any content */
+  overflow: hidden; /* optional, in case the pseudo-element overflows */
+}
+.sec2::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url(../img/cake_funville.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  filter: brightness(0.5); /* Adjust this value as needed */
+  z-index: -1; /* Keep it behind the content */
+  pointer-events: none; /* So it doesn’t interfere with clicks */
+}
+
+.sec2 > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 0 5rem 0 5rem;
+    gap: 3rem;
+}
+
+.sec2 > div:nth-child(1) > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.area21 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    text-align: left;
+    z-index: 1;
+}
+.area21 h1 {
+    font-size: clamp(1.8rem, 1rem + 6vw, 8rem);
+    font-family: var(--headings);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -5px;
+    font-weight: 700;
+    color: var(--cronell-red);
+    margin: 0;
+}
+.area21 h3 {
+    color: var(--penn-red);
+    margin: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0; 
+}
+.area21 > h3 > a {
+    color: var(--penn-red);
+    text-decoration: none;
+} 
+.areaIMG {
+    visibility: hidden;
+    filter: brightness(0.5);
+}
+
+.area22 {
+    display: flex;
+    align-items: end;
+    grid-column: 1 / span 3;
+    grid-row: 2 /  span 2;
+    margin: 5px 0 5px 0;
+    z-index: 1;
+}
+.area22 > p {
+    color: var(--cronell-red);
+    font-size: 1em;
+    text-align: left;
+    margin: 0;
+    text-align: left bottom;
+}
+
+.area23 {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 3;
+    border-radius: 0 45px 45px 45px;
+    background-image: url(../img/knight.png);
+    background-color: var(--licorice);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.area24 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+/* ---- SEC2 RESPONSIVNESS ---- */
+@media (max-width: 768px) {
+    .sec2::before {
+        background-image: none;
+    }
+    .sec2 > div:nth-child(1) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 0;
+        padding: 0 1rem 0 1rem;
+    }
+    .sec2 > div:nth-child(1) > div:nth-child(1) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+    .areaIMG {
+        visibility: visible;
+        background-image: url(../img/cake_funville.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 3;
+        filter: brightness(0.5);
+    }
+    .area22 {
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 1;
+    }
+    .area24 {
+        height: 0%;
+    }
+}
+
+@media (max-width: 530px) {
+    .areaIMG{
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 3;
+        background-position: top;
+    }
+}
+/* ------------ SEC3 -------------- */
+.sec3 {
+    min-height: 400px;
+    background-image: url(../img/crazy.png);
+    background-size: contain;
+    display: flex;
+    height: 100%;
+    padding: 2rem 5rem 2rem 5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    width: 80%;
+    background: var(--licorice);
+    padding: 20px;
+}
+
+.card a {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(1.3rem, 1rem + 2vw, 4rem);
+    color: var(--penn-red);
+    font-family: var(--headings);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--penn-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease;
+}
+
+.card a:hover::after {
+    transform: scaleX(1);
+}
+
+.card p {
+    color: var(--penn-red);
+    font-size: 1em;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 768px){
+    .sec3{ 
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem 2rem 1rem;
+    }
+
+    .card {
+        min-height: 180px;
+    }
+}
+
+/* ------------ SEC4 -------------- */
+.sec4 {
+  width: 100%;
+  margin: 5rem 0 0 0;
+}
+
+.sec4 > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 0 5rem 0 5rem;
+    gap: 3rem;
+}
+
+.sec4 > div:nth-child(1) > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.area41 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    text-align: left;
+    z-index: 1;
+}
+.area41 h1 {
+    font-size: clamp(1.8rem, 1rem + 6vw, 8rem);
+    font-family: var(--headings);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -5px;
+    font-weight: 700;
+    color: var(--cronell-red);
+    margin: 0;
+}
+.area41 h3 {
+    color: var(--penn-red);
+    margin: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0; 
+}
+.area41 > h3 > a {
+    color: var(--penn-red);
+    text-decoration: none;
+} 
+
+.area42 {
+    display: flex;
+    align-items: end;
+    grid-column: 1 / span 3;
+    grid-row: 2 /  span 2;
+    margin: 5px 0 5px 0;
+    z-index: 1;
+}
+.area42 > p {
+    color: var(--cronell-red);
+    font-size: 1em;
+    text-align: left;
+    margin: 0;
+    text-align: left bottom;
+}
+
+.area43 {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 3;
+    border-radius: 0 45px 0 0;
+    background-image: url(../img/mamas.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.area44 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.area44 .div1 {
+    background-image: url(../img/slnecnica.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 45px 0 0 0;
+}
+.area44 .div2 {
+    background-image: url(../img/jahoda.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 45px 0 0;
+}
+.area44 .div3 {
+    background-image: url(../img/cajik.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.area44 .div4 {
+    background-image: url(../img/tulipan.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ---- SEC3 RESPONSIVNESS ---- */
+@media (max-width: 768px) {
+    .sec4 > div:nth-child(1) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 0;
+        padding: 0 1rem 0 1rem;
+    }
+    .sec4 > div:nth-child(1) > div:nth-child(1) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+    .area41 {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+    }
+    .area42 {
+        grid-column: 1 / span 3;
+        grid-row: 2 / span 1;
+    }
+    .area43 {
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 3;
+    }
+    .area44 {
+        display: none;
+    }
+}
+
+@media (max-width: 530px) {
+    .sec4 > div:nth-child(1) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem 0 5rem;
+}
+
+footer p {
+    color: var(--penn-red);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 0 1rem 0 1rem;
+    }
+    footer p:nth-child(2) {
+        text-align: right;
+    }
+}
