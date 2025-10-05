@@ -108,7 +108,7 @@ li a::after {
 }
 
 li:hover a::after {
-   transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 /* ---------- NAV RESPONSIVE ---------- */
@@ -133,102 +133,118 @@ li:hover a::after {
 
 /***** CV LAYOUT (GRID VERSION) *****/
 .cv-section { 
-  min-height: 100vh; 
-  padding: 0 5rem 0 5rem; 
+    min-height: 100vh; 
+    padding: 0 5rem 0 5rem; 
 }
 
 .cv-wrap {
-  gap: 2rem;
+    gap: 2rem;
 }
 
 /* Center */
 .cv-center { 
-  grid-column: 2; 
-  grid-row: 2; 
-  text-align: center; 
-  z-index: 3;
+    grid-column: 2; 
+    grid-row: 2; 
+    text-align: center; 
+    z-index: 3;
 }
 .cv-center img { 
-  width:220px; 
-  height:220px; 
-  object-fit:cover; 
-  border:5px solid var(--purpleish); 
-  box-shadow:0 0 20px var(--very-pink); 
+    width:220px; 
+    height:220px; 
+    object-fit:cover; 
+    border:5px solid var(--purpleish); 
+    box-shadow:0 0 20px var(--very-pink); 
 }
 .cv-center h2 { 
-  font-family: var(--headings); 
-  color: var(--very-pink); 
-  margin:1rem 0 0.25rem; 
-  letter-spacing:1px; 
+    font-family: var(--headings); 
+    color: var(--very-pink); 
+    margin:1rem 0 0.25rem; 
+    letter-spacing:1px; 
 }
 .cv-center p { 
-  color: var(--purpleish); 
-  margin:0; 
+    color: var(--purpleish); 
+    margin:0; 
 }
 
 /* Cards */
 .cv-card { 
-  background: var(--licorice); 
-  border:1px solid var(--purpleish); 
-  border-radius:14px; 
-  box-shadow:0 10px 25px rgba(0,0,0,0.25); 
-  z-index:2;
-  padding-bottom: 2rem;
+    background: var(--licorice); 
+    border:1px solid var(--purpleish); 
+    border-radius:14px; 
+    box-shadow:0 10px 25px rgba(0,0,0,0.25); 
+    z-index:2;
+    padding-bottom: 2rem;
 }
 .cv-title { 
-  margin:0; 
-  padding:0.85rem 1rem; 
-  font-family: var(--headings); 
-  color: var(--very-pink); 
-  cursor:pointer; 
-  outline:none; 
+    margin:0; 
+    padding:0.85rem 1rem; 
+    font-family: var(--headings); 
+    color: var(--very-pink); 
+    cursor:pointer; 
+    outline:none; 
 }
 .cv-title:focus { 
-  box-shadow: 0 0 0 2px var(--very-pink); 
-  border-radius:14px 14px 0 0; 
+    box-shadow: 0 0 0 2px var(--very-pink); 
+    border-radius:14px 14px 0 0; 
 }
 .cv-body {
-  display: flex;
-  flex-direction: column;
-  padding:0 1rem 1rem; 
-  color: var(--purpleish); 
-  max-height:0; 
-  overflow:hidden; 
-  transform: translateY(8px); 
-  opacity:0; 
-  transition: max-height .5s ease, transform .35s ease, opacity .35s ease; 
+    display: flex;
+    flex-direction: column;
+    padding:0 1rem 1rem; 
+    color: var(--purpleish); 
+    max-height:0; 
+    overflow:hidden; 
+    transform: translateY(8px); 
+    opacity:0; 
+    transition: max-height .5s ease, transform .35s ease, opacity .35s ease; 
 }
 
 /* Hover/Focus reveal on the heading */
 .cv-card:hover .cv-body,
 .cv-card:focus-within .cv-body { 
-  max-height:420px; 
-  transform: translateY(0); 
-  opacity:1; 
+    max-height:420px; 
+    transform: translateY(0); 
+    opacity:1; 
 }
 
-.cv-card p, .cv-card li { line-height:1.4; }
-.cv-card ul { margin:0; padding-left:1rem; }
-.two-cols ul { columns: 2; column-gap: 1rem; }
+.cv-card p, .cv-card li { 
+    line-height:1.4;
+}
+.cv-card ul {
+    margin:0; 
+    padding-left:1rem;
+}
+.two-cols ul {
+    columns: 2;
+    column-gap: 1rem;
+}
 
 /* Interaction niceties */
-.cv-card:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+.cv-card:hover { 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
 .cv-card:hover .cv-title { 
-  color: var(--licorice); 
-  background: var(--very-pink); 
-  border-radius:14px 14px 0 0; 
+    color: var(--licorice); 
+    background: var(--very-pink); 
+    border-radius:14px 14px 0 0; 
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .cv-center img { width:190px; height:190px; }
+  .cv-center img { 
+    width:190px;
+    height:190px; }
 }
 @media (max-width: 765px) {
     .cv-section {
         padding: 0 1rem 0 1rem; 
     }
-  .cv-wrap { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .cv-center { margin: 0 auto 2rem; }
-
+    .cv-wrap { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
+    }
+    .cv-center { 
+        margin: 0 auto 2rem;
+    }
 }
 
